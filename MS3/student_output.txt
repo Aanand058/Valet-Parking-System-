@@ -1,0 +1,62 @@
+Script started on Tue 22 Nov 2022 03:45:13 PM EST
+==111918== Memcheck, a memory error detector
+==111918== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==111918== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==111918== Command: ms
+==111918== 
+ReadWrite Test.......................................
+Testing operator<< overload (pass 1): 
+These two outputs should match
+Output 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+* * *
+*   *
+* * *
+3,3
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                         *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+30,3
+Output 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+* * *
+*   *
+* * *
+3,3
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*                                                         *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+30,3
+**************************************************************
+Press Enter to continue.
+Testing operator<< overload (pass 2): 
+These two outputs should match
+Output 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+3,3
+30,3
+ÿOutput 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+3,3
+30,3
+**************************************************************
+Press Enter to continue.==111918== 
+==111918== Process terminating with default action of signal 2 (SIGINT)
+==111918==    at 0x580DB40: __read_nocancel (in /usr/lib64/libc-2.17.so)
+==111918==    by 0x5799D53: _IO_file_underflow@@GLIBC_2.2.5 (in /usr/lib64/libc-2.17.so)
+==111918==    by 0x579AF21: _IO_default_uflow (in /usr/lib64/libc-2.17.so)
+==111918==    by 0x579578D: getc (in /usr/lib64/libc-2.17.so)
+==111918==    by 0x4F3388C: syncgetc (stdio_sync_filebuf.h:225)
+==111918==    by 0x4F3388C: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (stdio_sync_filebuf.h:133)
+==111918==    by 0x4EF2EBB: sgetc (streambuf:351)
+==111918==    by 0x4EF2EBB: sgetc (streambuf:345)
+==111918==    by 0x4EF2EBB: std::istream::ignore(long, int) (istream.cc:128)
+==111918==    by 0x40143A: pause() (main_prof.cpp:119)
+==111918==    by 0x4012E6: RWmain() (main_prof.cpp:101)
+==111918==    by 0x401261: main (main_prof.cpp:87)
+==111918== 
+==111918== HEAP SUMMARY:
+==111918==     in use at exit: 0 bytes in 0 blocks
+==111918==   total heap usage: 5 allocs, 5 frees, 90,224 bytes allocated
+==111918== 
+==111918== All heap blocks were freed -- no leaks are possible
+==111918== 
+==111918== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Script done on Tue 22 Nov 2022 03:45:25 PM EST

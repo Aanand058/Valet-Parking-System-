@@ -1,0 +1,14 @@
+In line number 25 of your output:
+The output should be:
+> abc
+  ^
+But your output is: 
+> ==126796== 
+  ^
+
+Unmatched character details:
+The character in column 3 is supposed to be:
+  [a] ASCII code(97)
+but you printed
+  [End Of Text] ASCII code(3)
+

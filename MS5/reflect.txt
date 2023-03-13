@@ -1,0 +1,122 @@
+Name: Aanand Aman
+Student id: 166125211
+Email: aaman8@myseneca.ca 
+Date: 2022/12/08
+
+
+This is reflection part of the whole project(milestones) for fall 2022.
+
+
+Firstly, All the previous citations of all modules which are included in the modules files:
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Menu.cpp :
+--> During this project, I was facing problem in the indendation part, so i took help from one of my friend
+who is not a student of Seneca college. He helped me to implement the indentation output correctly in the display function to
+make it work properly. The name of my friend is Ashutosh Jha, email: jhaashutosh.aj@gmail.com
+
+
+Vehicle.h:
+--> In this part I got lots of errors, one was about strcmp, which my professor helped me to fix and
+another in the  const char* getLicensePlate() const; where i was not putting const at first
+and it was showing error return value type does not match the function type.
+For solving that I tried placing const at front and it worked.
+
+I was not able to implent the Uppercase of Licence Plate, My friend Ka Ho Chow, email: kchow25@myseneca.ca
+helped me and provided the code for uppercase:
+I placed this code in the Utils module.
+
+
+	const char* toUpperCase(char* string) {
+		// ref: https://www.digitalocean.com/community/tutorials/string-uppercase-lowercase-c-plus-plus
+		for (int i = 0; i < strlen(string); i++) {
+			string[i] = toupper(string[i]);
+		}
+		return string;
+	}
+
+
+
+Update on Vehicle.h: operator=
+
+1 . Getting conditional jumps in the vehicle.cpp, to solve the issue Chi Fai Lo helped me to
+initialize everything to safe empty state in the vehicle.h file of the attributes.
+	char m_plate[8 + 1]{};
+		int m_pSpotNum =0;
+
+This solved the problem for the conditional jumps
+
+
+
+Vehicle.cpp 
+--> In this part I got lots of errors, one was about strcmp, which my professor helped me to fix and
+another in the  const char* getLicensePlate() const; where i was not putting const at first
+and it was showing error return value type does not match the function type.
+For solving that I tried placing const at front and it worked.
+
+I was not able to implent the Uppercase of Licence Plate, My friend Ka Ho Chow, email: kchow25@myseneca.ca
+helped me and provided the code for uppercase:
+I placed this code in the Utils module.
+
+
+	const char* toUpperCase(char* string) {
+		// ref: https://www.digitalocean.com/community/tutorials/string-uppercase-lowercase-c-plus-plus
+		for (int i = 0; i < strlen(string); i++) {
+			string[i] = toupper(string[i]);
+		}
+		return string;
+	}
+
+Update on Vehicle.cpp: operator=
+1. Added this->setCsv(toCopyFrom.isCsv());
+
+2. I was facing memory leaks problem in the matrix, to solve i took help from my friend Chi Fai Lo, email: clo36@myseneca.ca
+
+In the Vehicle.cpp, he helped to change these implementation in the opeator=
+if(!isEmpty())
+				delete[] this->m_makeModel;
+to check the state of vehicle which solved the problem of leaks.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+During this project, Me along with some of my friends work on this project to make it complete. I have already mentioned in the upper 
+part. I am again delclaring that during this project I worked these friends:
+
+Rubal preet Singh, nrubalpreet-singh@myseneca.ca
+Chow Ka Ho, kchow25@myseneca.ca 
+Chi Fai Lo, clo36@myseneca.ca 
+Ashutosh Jha, jhaashutosh.aj@gmail.com
+
+
+
+Working on this project was pretty interesting along with stressfull, complteting the project before the deadline was the a real stress.
+I got to learn about very new things in this project such as how to prevent conditional jumps issue of initialization, deleting the 
+dynamically created this with very careful checking the conditions, the rule of three implementation for dynamic resources, the importance of having small modules and methods along with good
+implementation of encapsulation, inheritence and polymorphism. One of the biggest help in this semester was the Visual Studio Debugger tool 
+which helped me alot to learn about what is on going in the code with what is the variables addresses and values at every line of the code. 
+The debugger helped a lot to where should I make my changes in the code to make it run correctly. Also, I want to thanks to the professor who 
+helped me along this semester for solving my doubts and helping me to complete the workshops and project. 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Regarding the Milestone 5 (Parking module):
+
+Working on this module, the loadDataFile() method was really hard for me, I was not getting the correct implementation and the program will 
+run in a endless loop, even I was using flag values. I was also getting leaks problem because I was delete the memory multipple time inside the 
+same method, to solve this issue I implemented that part in the destructor. After trying many times, I took help from my friend Ashutosh Jha, where
+he helped me to built this method with his coding skills. The issue was I was not changing the setCsv() value to true and    this->p_noOfParkedVehicles++. 
+Also, I have placed the loadStatus to wrong place where the loop was not working properly.  
+Making of the new Vehicle code looks repeated twice, I also tried making new method, but it didn't worked out well, giving me leaks and wrong outputs.
+The help from my friend and some google search helped me to fix this issue. 
+
+After that there was not much issue,except that i was not setting the setCsv() value correctly in some module, where the debugger and given output played a 
+big role to solve the issue. 
+
+Similarly, I was getting the case label issue in the parkVehicle() method, where the Switch statement was not compiling, 
+for that I used google and stackoverflow, and I added extra break; and default which solved the compiling issue. This made the code work properly, 
+there were some minor issue of incorrect values of p_noOfParkedVehicles in the ++ and -- things which was solved by seeing the correct output. 
+One this was really painful is the spelling of Liscense/Liscence to match in the Matrix where some method used C instead of S which took a bit time to run in 
+the matrix correctly.
+
+
+
